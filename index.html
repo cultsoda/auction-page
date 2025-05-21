@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경매 페이지 코드</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-vsc-dark-plus.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-jsx.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-typescript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-tsx.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        h1, h2, h3 {
+            color: #fff;
+        }
+        .file-tree {
+            background-color: #252526;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .file-link {
+            color: #85c5ff;
+            text-decoration: none;
+            display: block;
+            padding: 4px 0;
+        }
+        .file-link:hover {
+            text-decoration: underline;
+        }
+        .folder {
+            margin-left: 16px;
+        }
+        .folder-name {
+            color: #e0e0e0;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+        }
+        .folder-name::before {
+            content: "📁 ";
+        }
+        .file-link::before {
+            content: "📄 ";
+        }
+        .code-container {
+            margin-top: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #444;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>v0로 생성된 경매 페이지</h1>
+    
+    <div class="file-tree">
+        <h2>프로젝트 파일 구조</h2>
+        <div>
+            <div class="folder-name">app</div>
+            <div class="folder">
+                <div class="folder-name">favorites</div>
+                <div class="folder">
+                    <a href="#" class="file-link" data-file="app/favorites/page.tsx">page.tsx</a>
+                </div>
+                <div class="folder-name">goods</div>
+                <div class="folder">
+                    <a href="#" class="file-link" data-file="app/goods/page.tsx">page.tsx</a>
+                </div>
+                <div class="folder-name">mypage</div>
+                <div class="folder">
+                    <a href="#" class="file-link" data-file="app/mypage/page.tsx">page.tsx</a>
+                </div>
+                <a href="#" class="file-link" data-file="app/globals.css">globals.css</a>
+                <a href="#" class="file-link" data-file="app/layout.tsx">layout.tsx</a>
+            </div>
+            <div class="folder-name">components</div>
+            <div class="folder">
+                <div class="folder-name">auction</div>
+                <div class="folder">
+                    <a href="#" class="file-link" data-file="components/auction/AuctionCard.tsx">AuctionCard.tsx</a>
+                    <a href="#" class="file-link" data-file="components/auction/AuctionList.tsx">AuctionList.tsx</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="code-container">
+        <h2>코드 미리보기</h2>
+        <div id="code-preview">
+            <p>왼쪽 파일 트리에서 파일을 클릭하여 코드를 확인하세요.</p>
+        </div>
+    </div>
+
+    <script>
+        // 파일 트리 토글 기능
+        document.querySelectorAll('.folder-name').forEach(folder => {
+            folder.addEventListener('click', function() {
+                const folderContent = this.nextElementSibling;
+                folderContent.style.display = folderContent.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+
+        // 파일 클릭 이벤트
+        document.querySelectorAll('.file-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const filePath = this.getAttribute('data-file');
+                // 여기서 파일 내용을 가져와 표시하는 코드를 추가할 수 있습니다
+                document.getElementById('code-preview').innerHTML = `<p>파일 ${filePath}의 내용을 로드 중...</p>`;
+                
+                // 실제로는 fetch를 사용하여 파일 내용을 가져와야 합니다
+                // 예시: fetch(filePath).then(...)
+            });
+        });
+    </script>
+</body>
+</html>
