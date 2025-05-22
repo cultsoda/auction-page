@@ -113,8 +113,7 @@ export default function AuctionProductPage({ params }: { params: { id: string } 
 
         <h3 className="font-bold mb-2">경매 참여 안내</h3>
         <p className="text-sm text-gray-300">
-          경매에 참여하시면 특별한 인플루언서 굿즈를 소장할 수 있는 기회를 얻게 됩니다. 또한 경매 수익금의 일부는
-          자선단체에 기부되어 의미 있는 일에 쓰입니다.
+          경매에 참여하시면 특별한 인플루언서 굿즈를 소장할 수 있는 기회를 얻게 됩니다. 
         </p>
       </div>
     </div>
