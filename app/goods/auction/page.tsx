@@ -34,7 +34,7 @@ export default function AuctionPage() {
       <div className="p-4 bg-gray-900">
         <h2 className="text-xl font-bold mb-2">경매 안내</h2>
         <p className="text-sm text-gray-300 mb-4">
-          특별한 인플루언서 굿즈를 경매를 통해 만나보세요. 경매 수익금의 일부는 자선단체에 기부됩니다.
+          특별한 인플루언서 굿즈를 경매를 통해 만나보세요. 
         </p>
 
         <div className="bg-black rounded-lg p-3 mb-4 flex justify-between items-center">
